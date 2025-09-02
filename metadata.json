@@ -1,0 +1,5 @@
+{
+  "name": "UK Land Feasibility AI",
+  "description": "An AI-powered tool for property developers to analyze land parcels, generate optimal building layouts, and assess feasibility using Google Maps and Gemini.",
+  "requestFramePermissions": []
+}

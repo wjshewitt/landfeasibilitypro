@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Essential Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- SEO & Accessibility Meta Tags -->
+    <title>UK Land Feasibility AI</title>
+    <meta name="description" content="An AI-powered tool for assessing land development feasibility across the United Kingdom using geospatial data and analysis." />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Customize Tailwind theme (optional)
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    
+    <!-- 
+      MODERN SCRIPT LOADING: IMPORT MAP
+      This defines module shortcuts for our application's dependencies.
+      It allows us to use bare import specifiers (e.g., 'import React from "react"')
+      directly in the browser without a build step.
+    -->
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "@vis.gl/react-google-maps": "https://esm.sh/@vis.gl/react-google-maps@1.5.5",
+    "@google/genai": "https://esm.sh/@google/genai@0.1.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans antialiased">
+    
+    <!-- 
+      The root element where the React application will be mounted.
+    -->
+    <main id="root"></main>
+    
+    <!-- 
+      A fallback message for users with JavaScript disabled.
+    -->
+    <noscript>
+      <div style="text-align: center; padding: 2rem; font-family: sans-serif;">
+        <h1 style="font-size: 1.5rem; margin-bottom: 1rem;">JavaScript Required</h1>
+        <p>This application requires JavaScript to function. Please enable it in your browser settings and refresh the page.</p>
+      </div>
+    </noscript>
+
+    <!-- 
+      Main application entry point. The 'type="module"' attribute enables modern
+      JavaScript features, including the import map defined above.
+    -->
+    <script type="module" src="/index.tsx"></script>
+
+    <!-- 
+      NOTE ON GOOGLE MAPS API:
+      The direct <script> tag for the Google Maps API has been removed.
+      The recommended approach when using the '@vis.gl/react-google-maps' library
+      is to let its <APIProvider> component handle the loading of the Google Maps script.
+      You will pass your API key as a prop to this provider component within your React code.
+      
+      Example in your main React component (e.g., App.tsx):
+      
+      import { APIProvider } from '@vis.gl/react-google-maps';
+      
+      const App = () => (
+        <APIProvider apiKey="YOUR_SECURE_GOOGLE_MAPS_API_KEY">
+          ... your map components go here ...
+        </APIProvider>
+      );
+      
+      Remember to store your API key securely using environment variables.
+    -->
+</body>
+</html>
